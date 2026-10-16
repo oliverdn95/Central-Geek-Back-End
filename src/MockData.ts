@@ -14,35 +14,12 @@
 // pelo frontend do MVP. Em uma implementação Prisma completa, isso pode ser
 // normalizado posteriormente em manga_titles, manga_volumes e user_mangas.
 
-export type UserRole = 'USER' | 'MODERATOR' | 'ADMIN' | 'SUPER_ADMIN';
-
-export type MangaCondition =
-  | 'NOVO'
-  | 'COMO_NOVO'
-  | 'BOM'
-  | 'REGULAR'
-  | 'RUIM';
-
-export type ListingType =
-  | 'TROCA'
-  | 'EMPRESTIMO'
-  | 'DOACAO'
-  | 'DESAPEGO';
-
-export type ListingStatus =
-  | 'RASCUNHO'
-  | 'ATIVO'
-  | 'NEGOCIANDO'
-  | 'CONCLUIDO'
-  | 'CANCELADO'
-  | 'EXPIRADO';
-
 export interface User {
   id: string;
   email: string;
   username: string;
   passwordHash: string;
-  role: UserRole;
+  role: string;
   displayName: string;
   bio: string;
   avatarUrl: string;
@@ -61,7 +38,7 @@ export interface Manga {
   genre: string;
   synopsis: string;
   coverImageUrl: string;
-  condition: MangaCondition;
+  condition: string;
   ownerId: string;
   notes?: string;
   createdAt: string;
@@ -71,8 +48,8 @@ export interface Listing {
   id: string;
   userId: string;
   mangaId: string;
-  type: ListingType;
-  status: ListingStatus;
+  type: string;
+  status: string;
   description: string;
   price: number | null;
   desiredItems: string[];
@@ -355,7 +332,7 @@ export const getListingById = (listingId: string) =>
 export const getActiveListings = () =>
   Listings.filter((listing) => listing.status === 'ATIVO');
 
-export const getListingsByType = (type: ListingType) =>
+export const getListingsByType = (type: string) =>
   Listings.filter(
     (listing) => listing.type === type && listing.status === 'ATIVO'
   );

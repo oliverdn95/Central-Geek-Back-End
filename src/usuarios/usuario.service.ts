@@ -8,7 +8,7 @@ export class usuarioCadastrados{
     #usuarios:Usuario[] = [];
 
     adicionaUsuario(dadosUsuario:any){
-        let usuario = new Usuario(uuid(), dadosUsuario.email, dadosUsuario.passwordHash, dadosUsuario.role, dadosUsuario.displayName, dadosUsuario.bio, dadosUsuario.avatarUrl, dadosUsuario.city, dadosUsuario.state, dadosUsuario.createdAt)
+        let usuario = new Usuario(uuid(), dadosUsuario.email, dadosUsuario.username, dadosUsuario.passwordHash, dadosUsuario.role, dadosUsuario.displayName, dadosUsuario.bio, dadosUsuario.avatarUrl, dadosUsuario.city, dadosUsuario.state, dadosUsuario.createdAt)
 
         this.#usuarios.push(usuario);
         return usuario.id;

@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
 import { createObserveModule } from '@nestjs/observe';
+import { UsuarioModule } from './usuarios/usuario.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
 @Module({
-  imports: [],
+  imports: [UsuarioModule],
   controllers: [],
   providers: [],
 })
