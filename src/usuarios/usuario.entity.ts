@@ -1,4 +1,3 @@
-//TODO Install BCRYPT
 import * as bcrypt from 'bcrypt';
 
 export class Usuario {
