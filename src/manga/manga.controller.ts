@@ -30,7 +30,7 @@ export class MangaController {
     }
 
     @Get()
-    async retornarUsuarios() {
+    async retornarMangas() {
         return {
             message: "Consulta Efetuada",
             mangas: this.mangas.retornaMangas()

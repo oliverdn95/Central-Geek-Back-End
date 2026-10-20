@@ -70,7 +70,7 @@ export class alteraMangaDTO {
     @IsString()
     @IsOptional()
     @ApiProperty({
-        example: "Novo",
+        example: "NOVO",
         description: "Tipo: String; Condição do manga (Novo, Usado, etc.)."
     })
     condition: string;

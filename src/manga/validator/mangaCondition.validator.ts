@@ -16,7 +16,7 @@ export class mangaCondition implements ValidatorConstraintInterface {
 
 }
 
-export const VerificaCondition = (opcoesValidacao: ValidationOptions) => {
+export const VerificaCondicao = (opcoesValidacao: ValidationOptions) => {
     return (objeto: Object, propriedade: string) => {
         registerDecorator({
             target: objeto.constructor,

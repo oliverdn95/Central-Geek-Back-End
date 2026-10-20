@@ -1,4 +1,4 @@
-export type ListingStatus =
+export type EstadoNegociacao =
   | 'RASCUNHO'
   | 'ATIVO'
   | 'NEGOCIANDO'

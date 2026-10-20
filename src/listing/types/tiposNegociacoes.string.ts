@@ -1,4 +1,4 @@
-export type ListingType =
+export type TiposNegociacoes =
   | 'TROCA'
   | 'EMPRESTIMO'
   | 'DOACAO'

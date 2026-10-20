@@ -1,5 +1,6 @@
 import { IsNumber, IsString } from "class-validator";
 import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
+import { VerificaCondicao } from "../validator/mangaCondition.validator.js";
 
 export class criaMangaDTO {
 
@@ -60,8 +61,9 @@ export class criaMangaDTO {
     coverImageUrl: string;
 
     @IsString()
+    @VerificaCondicao({ message: "Condição inválida" })
     @ApiProperty({
-        example: "Novo",
+        example: "NOVO",
         description: "Tipo: String; Condição do manga (Novo, Usado, etc.)."
     })
     condition: string;
