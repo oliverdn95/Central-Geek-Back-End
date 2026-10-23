@@ -8,5 +8,6 @@ import { tiposNegociacoesValidator } from './validator/tiposNegociacoes.validato
   imports: [],
   controllers: [NegociacaoController],
   providers: [NegociacaoCadastradas, tiposNegociacoesValidator, estadoNegociacaoValidator],
+  exports: [NegociacaoCadastradas],
 })
 export class NegociacaoModule {}

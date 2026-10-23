@@ -9,5 +9,6 @@ import { userRole } from './validator/userRole.validator.js';
   imports: [],
   controllers: [UsuarioController],
   providers: [usuarioCadastrados, senhaForteValidator , emailUnicoValidator, userRole],
+  exports: [usuarioCadastrados],
 })
 export class UsuarioModule {}

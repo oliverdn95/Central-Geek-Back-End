@@ -7,5 +7,6 @@ import { mangaCondition } from './validator/mangaCondition.validator.js';
   imports: [],
   controllers: [MangaController],
   providers: [mangaCadastrados, mangaCondition],
+  exports: [mangaCadastrados],
 })
 export class MangaModule {}
