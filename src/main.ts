@@ -9,6 +9,10 @@ async function bootstrap() {
     instrument: ObserveInstrument,
   });
   
+  app.enableCors({
+    origin: "http://localhost:5173",
+});
+  
   app.useGlobalPipes(
     new ValidationPipe({
       transform:true,
